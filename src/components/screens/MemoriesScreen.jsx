@@ -7,11 +7,11 @@ import Button from '../Button';
 
 const presetMemories = [
     { src: "/images/1766949044395.jpg", title: "With You Always 💕" },
-    { src: "/images/IMG_20251228_183641_608.webp", title: "Unforgettable Moments ✨" },
-    { src: "/images/Snapchat-93328477.jpg", title: "My Favorite Person 🌸" },
-    { src: "/images/Snapchat-448008985.jpg", title: "Hand in Hand 🤝" },
-    { src: "/images/20260509_113635.jpg", title: "In My Heart Forever 💖" },
     { src: "/images/20260513_185815.jpg", title: "Endless Smiles with Bubu 🌙" },
+    { src: "/images/IMG_20251228_183641_608.webp", title: "Unforgettable Moments ✨" },
+    { src: "/images/Snapchat-448008985.jpg", title: "Hand in Hand 🤝" },
+    { src: "/images/Snapchat-93328477.jpg", title: "My Favorite Person 🌸" },
+    { src: "/images/20260509_113635.jpg", title: "In My Heart Forever 💖" },
 ];
 
 export default function MemoriesScreen({ onNext }) {
