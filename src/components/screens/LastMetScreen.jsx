@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import Button from "../Button";
@@ -6,10 +6,7 @@ import Button from "../Button";
 const lastMetDate = "2025-01-01";
 
 function LastMetScreen({ onNext }) {
-    const [days, setDays] = useState(0);
-    const [dateStr, setDateStr] = useState("");
-
-    useEffect(() => {
+    const [lastMetInfo] = useState(() => {
         const lastMet = new Date(lastMetDate);
         const today = new Date();
         lastMet.setHours(0, 0, 0, 0);
@@ -18,9 +15,12 @@ function LastMetScreen({ onNext }) {
         const diffTime = Math.abs(today - lastMet);
         const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
 
-        setDays(diffDays);
-        setDateStr(lastMet.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
-    }, []);
+        return {
+            days: diffDays,
+            dateStr: lastMet.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        };
+    });
+    const { days, dateStr } = lastMetInfo;
 
     return (
         <div className="flex flex-col items-center justify-center h-full w-full text-center relative">
@@ -60,7 +60,7 @@ function LastMetScreen({ onNext }) {
                 <div className="w-16 h-1 rounded-full bg-pink-100 my-4 relative"></div>
 
                 <p className="text-2xl md:text-[26px] text-slate-600 font-hand font-semibold leading-snug text-balance relative">
-                    And I've missed you every single one of them.
+                    And I&apos;ve missed you every single one of them.
                 </p>
             </motion.div>
 

@@ -1,0 +1,8 @@
+{
+  "name": "Until We Meet Again",
+  "description": "A cute and heartfelt interactive website for long distance couples with animations, memories, and a sweet message.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

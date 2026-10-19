@@ -33,8 +33,28 @@ npm install
 # Start the development server
 npm run dev
 ```
+Then open the development URL in your browser to explore the site.
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser to explore the site.
+---
+
+## 🚀 Deploy to Vercel
+
+The easiest way to deploy this Next.js app is using the [Vercel Platform](https://vercel.com/new).
+
+### Option 1: Deploy with Git (Recommended)
+1. Push your repository to GitHub, GitLab, or Bitbucket.
+2. Go to [Vercel](https://vercel.com) and click **"Add New..."** > **"Project"**.
+3. Import your repository. Vercel will automatically detect Next.js and configure the build settings.
+4. Click **Deploy**. Your app will be live in seconds!
+
+### Option 2: Deploy with Vercel CLI
+```bash
+# Install Vercel CLI globally
+npm i -g vercel
+
+# Deploy directly from your terminal
+vercel
+```
 
 ---
 

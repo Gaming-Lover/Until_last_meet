@@ -19,7 +19,7 @@ function ThingsToDoScreen({ onNext }) {
                 transition={{ duration: 0.8 }}
             >
                 <h2 className="text-3xl md:text-5xl font-bold text-slate-700 mb-2">
-                    Things we'll do
+                    Things we&apos;ll do
                 </h2>
                 <p className="text-xl md:text-2xl font-hand text-rose-500">when we finally meet again</p>
             </motion.div>

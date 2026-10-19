@@ -48,7 +48,7 @@ export default function FinalScreen() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1, duration: 0.8 }}
                 >
-                    I can't wait to see you again.
+                    I can&apos;t wait to see you again.
                 </motion.p>
             </div>
         </div>
