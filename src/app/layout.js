@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${fredoka.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col select-none bg-white">{children}</body>
+      <body className="min-h-full flex flex-col select-none">{children}</body>
     </html>
   );
 }
