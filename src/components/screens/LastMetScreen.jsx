@@ -2,32 +2,33 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
 import Button from "../Button";
 
-const lastMetDate = "2025-01-01";
+// Last meet was on October 8, 2026; set up to October 22, 2026 (14 days)
+const lastMetDate = new Date(2026, 9, 8); // October 8, 2026
+const targetDate = new Date(2026, 9, 22); // October 22, 2026
 
-function LastMetScreen({ onNext }) {
+export default function LastMetScreen({ onNext }) {
     const [lastMetInfo] = useState(() => {
-        const lastMet = new Date(lastMetDate);
-        const today = new Date();
-        lastMet.setHours(0, 0, 0, 0);
-        today.setHours(0, 0, 0, 0);
-
-        const diffTime = Math.abs(today - lastMet);
-        const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+        const diffTime = Math.abs(targetDate.getTime() - lastMetDate.getTime());
+        const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24)); // exactly 14 days
 
         return {
             days: diffDays,
-            dateStr: lastMet.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+            dateStr: lastMetDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })
         };
     });
+
     const { days, dateStr } = lastMetInfo;
 
     return (
         <div className="flex flex-col items-center justify-center h-full w-full text-center relative">
             <motion.p
-                className="text-lg md:text-xl text-slate-6600 font-medium uppercase tracking-wider mb-2 z-10 will-change-transform"
+                className="text-lg md:text-xl text-slate-600 font-medium uppercase tracking-wider mb-2 z-10 will-change-transform"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -72,5 +73,3 @@ function LastMetScreen({ onNext }) {
         </div>
     );
 }
-
-export default LastMetScreen
